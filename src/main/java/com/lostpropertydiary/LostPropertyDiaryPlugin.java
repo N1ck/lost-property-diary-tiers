@@ -1,4 +1,4 @@
-package com.perdudiary;
+package com.lostpropertydiary;
 
 import com.google.inject.Provides;
 import javax.inject.Inject;
@@ -16,17 +16,17 @@ import net.runelite.client.plugins.PluginDescriptor;
 
 @Slf4j
 @PluginDescriptor(
-	name = "Perdu Diary Icons",
-	description = "Shows the correct achievement diary reward tier in Perdu's reclaim shop instead of always the easy tier",
+	name = "Lost Property Diary Tiers",
+	description = "Shows the correct achievement diary reward tier in the Lost Property shop instead of always the easy tier",
 	tags = {"perdu", "diary", "achievement", "shop", "reclaim", "lost", "property"}
 )
-public class PerduDiaryPlugin extends Plugin
+public class LostPropertyDiaryPlugin extends Plugin
 {
 	@Inject
 	private Client client;
 
 	@Inject
-	private PerduDiaryConfig config;
+	private LostPropertyDiaryConfig config;
 
 	private boolean shopOpen;
 
@@ -42,7 +42,7 @@ public class PerduDiaryPlugin extends Plugin
 		if (event.getGroupId() == InterfaceID.LOST_PROPERTY)
 		{
 			shopOpen = true;
-			applyDiaryIcons();
+			applyDiaryTiers();
 		}
 	}
 
@@ -66,11 +66,11 @@ public class PerduDiaryPlugin extends Plugin
 		// It's a no-op (a cheap boolean check) whenever the shop isn't open.
 		if (shopOpen)
 		{
-			applyDiaryIcons();
+			applyDiaryTiers();
 		}
 	}
 
-	private void applyDiaryIcons()
+	private void applyDiaryTiers()
 	{
 		Widget list = client.getWidget(InterfaceID.LostProperty.LIST);
 		if (list == null)
@@ -111,8 +111,8 @@ public class PerduDiaryPlugin extends Plugin
 	}
 
 	@Provides
-	PerduDiaryConfig provideConfig(ConfigManager configManager)
+	LostPropertyDiaryConfig provideConfig(ConfigManager configManager)
 	{
-		return configManager.getConfig(PerduDiaryConfig.class);
+		return configManager.getConfig(LostPropertyDiaryConfig.class);
 	}
 }

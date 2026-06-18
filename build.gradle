@@ -14,7 +14,7 @@ repositories {
 }
 
 def runeLiteVersion = 'latest.release'
-def pluginMainClass = 'com.perdudiary.PerduDiaryPluginTest'
+def pluginMainClass = 'com.lostpropertydiary.LostPropertyDiaryPluginTest'
 
 dependencies {
 	compileOnly group: 'net.runelite', name:'client', version: runeLiteVersion
@@ -27,7 +27,7 @@ dependencies {
 	testImplementation group: 'net.runelite', name:'jshell', version: runeLiteVersion
 }
 
-group = 'com.perdudiary'
+group = 'com.lostpropertydiary'
 
 tasks.withType(JavaCompile).configureEach {
 	options.encoding = 'UTF-8'

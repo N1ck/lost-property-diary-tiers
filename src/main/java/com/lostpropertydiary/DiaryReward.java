@@ -1,4 +1,4 @@
-package com.perdudiary;
+package com.lostpropertydiary;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +11,7 @@ import net.runelite.api.Varbits;
  * One achievement-diary reward family (e.g. Karamja gloves), holding the completion varbit and the
  * item id for each of its four tiers. Tiers are 0-indexed internally: 0 = easy/1, 3 = elite/4.
  *
- * <p>{@code baseItemId} is the generic, pre-tier item id that Perdu's Lost Property shop displays
+ * <p>{@code baseItemId} is the generic, pre-tier item id that the Lost Property shop displays
  * for this reward. It always shows that base icon regardless of which tier you've completed, which
  * is what this plugin corrects.
  *

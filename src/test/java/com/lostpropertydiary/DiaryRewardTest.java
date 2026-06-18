@@ -1,4 +1,4 @@
-package com.perdudiary;
+package com.lostpropertydiary;
 
 import java.util.HashMap;
 import java.util.HashSet;
