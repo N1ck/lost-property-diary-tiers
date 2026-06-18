@@ -1,6 +1,5 @@
 package com.lostpropertydiary;
 
-import com.google.inject.Provides;
 import javax.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
@@ -9,7 +8,6 @@ import net.runelite.api.events.WidgetClosed;
 import net.runelite.api.events.WidgetLoaded;
 import net.runelite.api.gameval.InterfaceID;
 import net.runelite.api.widgets.Widget;
-import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
@@ -24,9 +22,6 @@ public class LostPropertyDiaryPlugin extends Plugin
 {
 	@Inject
 	private Client client;
-
-	@Inject
-	private LostPropertyDiaryConfig config;
 
 	private boolean shopOpen;
 
@@ -102,17 +97,10 @@ public class LostPropertyDiaryPlugin extends Plugin
 				// using the same "<col=ff9040>" formatting the shop uses for its slot names.
 				slot.setName("<col=ff9040>" + client.getItemDefinition(correctId).getName());
 
-				if (config.debugLogging())
-				{
-					log.info("Swapped {} from id {} to tier id {}", reward, displayedId, correctId);
-				}
+				// Captured only when RuneLite is run with debug logging; useful if a future game
+				// update changes an item id and a reward stops updating.
+				log.debug("Swapped {} from id {} to tier id {}", reward, displayedId, correctId);
 			}
 		}
-	}
-
-	@Provides
-	LostPropertyDiaryConfig provideConfig(ConfigManager configManager)
-	{
-		return configManager.getConfig(LostPropertyDiaryConfig.class);
 	}
 }
