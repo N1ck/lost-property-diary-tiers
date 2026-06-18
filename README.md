@@ -10,4 +10,6 @@ This plugin updates those icons to match your progress, showing the reward for t
 highest diary tier you've completed. For example, if you've finished the Karamja Elite
 diary, the shop shows *Karamja gloves 4* instead of the basic gloves.
 
-It only changes how the rewards are displayed; the item you reclaim is unchanged.
+| Before | After |
+|:------:|:-----:|
+| ![Perdu's shop without the plugin](before.png) | ![Perdu's shop with the plugin](after.png) |
