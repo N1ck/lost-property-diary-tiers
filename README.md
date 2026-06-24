@@ -1,5 +1,8 @@
 # Lost Property Diary Tiers
 
+[![Active Installs](http://img.shields.io/endpoint?url=https://api.runelite.net/pluginhub/shields/installs/plugin/lost-property-diary-tiers)](https://runelite.net/plugin-hub/show/lost-property-diary-tiers)
+
+
 A RuneLite plugin for Old School RuneScape.
 
 The Lost Property shop (run by Perdu and Chris), where you reclaim achievement diary
